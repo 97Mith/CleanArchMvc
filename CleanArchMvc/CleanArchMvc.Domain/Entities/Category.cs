@@ -18,8 +18,11 @@ namespace CleanArchMvc.Domain.Entities
         }
         public Category(int id, string name)
         {
-            Id = id;
-            Name = name;
+            DomainValidationException.When(id < 0,
+                "Invalid Id value");
+			Id = id;
+
+			ValidationDomain(name);
         }
 
         //define que uma categoria pode ter uma coleção de produtos
@@ -28,7 +31,11 @@ namespace CleanArchMvc.Domain.Entities
 
         private void ValidationDomain(string name)
         {
-            DomainValidationException.When(string.IsNullOrEmpty(name), "The name is invalid, cannot be null");
+            DomainValidationException.When(string.IsNullOrEmpty(name), 
+                "The name is invalid, cannot be null");
+
+            DomainValidationException.When(name.Length < 3, 
+                "The name is too short");
         }
     }
 }
