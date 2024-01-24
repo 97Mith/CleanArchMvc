@@ -7,12 +7,18 @@ using System.Threading.Tasks;
 
 namespace CleanArchMvc.Domain.Entities
 {
-	public sealed class Category
+	public sealed class Category : Entity
 	{
-        public int Id { get; private set; }
+        //public int Id { get; private set; }
 		public string Name { get; private set; }
 
-        public Category(string name)
+		//TODO. criar um metodo de atualização do nome da categoria
+		public void UpdateName(string newName)
+		{
+			ValidationDomain(newName);
+			Name = newName;
+		}
+		public Category(string name)
         {
             Name = name;
         }
