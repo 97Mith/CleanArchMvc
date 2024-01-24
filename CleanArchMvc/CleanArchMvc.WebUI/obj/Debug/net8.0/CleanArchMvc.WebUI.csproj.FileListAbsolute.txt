@@ -38,3 +38,4 @@ C:\Users\Matheus\Desktop\CSharp\Exemple software using Clean Architecture\FIrst_
 C:\Users\Matheus\Desktop\CSharp\Exemple software using Clean Architecture\FIrst_Clean_Arch\CleanArchMvc\CleanArchMvc.WebUI\bin\Debug\net8.0\CleanArchMvc.Infra.Data.pdb
 C:\Users\Matheus\Desktop\CSharp\Exemple software using Clean Architecture\FIrst_Clean_Arch\CleanArchMvc\CleanArchMvc.WebUI\obj\Debug\net8.0\CleanArchMvc.WebUI.csproj.AssemblyReference.cache
 C:\Users\Matheus\Desktop\CSharp\Exemple software using Clean Architecture\FIrst_Clean_Arch\CleanArchMvc\CleanArchMvc.WebUI\obj\Debug\net8.0\CleanArchMvc.WebUI.csproj.CopyComplete
+C:\Users\Matheus\Desktop\CSharp\Exemple software using Clean Architecture\FIrst_Clean_Arch\CleanArchMvc\CleanArchMvc.WebUI\obj\Debug\net8.0\CleanArchMvc.WebUI.sourcelink.json

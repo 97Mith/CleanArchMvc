@@ -9,3 +9,4 @@ C:\Users\Matheus\Desktop\CSharp\Exemple software using Clean Architecture\FIrst_
 C:\Users\Matheus\Desktop\CSharp\Exemple software using Clean Architecture\FIrst_Clean_Arch\CleanArchMvc\CleanArchMvc.Domain\obj\Debug\net8.0\refint\CleanArchMvc.Domain.dll
 C:\Users\Matheus\Desktop\CSharp\Exemple software using Clean Architecture\FIrst_Clean_Arch\CleanArchMvc\CleanArchMvc.Domain\obj\Debug\net8.0\CleanArchMvc.Domain.pdb
 C:\Users\Matheus\Desktop\CSharp\Exemple software using Clean Architecture\FIrst_Clean_Arch\CleanArchMvc\CleanArchMvc.Domain\obj\Debug\net8.0\ref\CleanArchMvc.Domain.dll
+C:\Users\Matheus\Desktop\CSharp\Exemple software using Clean Architecture\FIrst_Clean_Arch\CleanArchMvc\CleanArchMvc.Domain\obj\Debug\net8.0\CleanArchMvc.Domain.sourcelink.json
