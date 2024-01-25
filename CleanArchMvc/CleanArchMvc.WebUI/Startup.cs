@@ -18,6 +18,7 @@ namespace CleanArchMvc.WebUI
 
 		public void ConfigureServices(IServiceCollection services)
 		{
+			//revisar toda a implementação e manipulação do IServiceCollection
 			services.AddInfrastructure(Configuration);
 			services.AddControllersWithViews();
 		}

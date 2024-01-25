@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "EGyWnBWDuUZRaWSkSvyzaH8BcHmb54g2lHY9sQq9uBg3TtHuSmM4xbvRWCJnR2sYJF4bg6ZXz+SjcouFOi/frQ==",
+  "dgSpecHash": "oyd4O/lLdpN+x6avlVhJA/x9ol3MoElb0WCt/2jP5x4ij03YSIGwMhQUaKbfBMa8lD+1TiNqBWhE9Mc0bA/grw==",
   "success": true,
   "projectFilePath": "C:\\Users\\Matheus\\Desktop\\CSharp\\Exemple software using Clean Architecture\\FIrst_Clean_Arch\\CleanArchMvc\\CleanArchMvc.Infra.Data\\CleanArchMvc.Infra.Data.csproj",
   "expectedPackageFiles": [
