@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+// Configurando as colunas e chaves primarias do DB
 namespace CleanArchMvc.Infra.Data.EntitiesConfiguration
 {
 	public class ProductConfiguration : IEntityTypeConfiguration<Product>
