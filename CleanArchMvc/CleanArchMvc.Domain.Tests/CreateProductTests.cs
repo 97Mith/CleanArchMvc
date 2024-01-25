@@ -28,10 +28,11 @@ namespace CleanArchMvc.Domain.Tests
 		[Fact(DisplayName = "Criação de produto com parametros invalidos")]
 		public void CreateProduct_InvalidParameters_GenericErrorExpected()
 		{
-			Action action = () => new Product(1, "", "", -111, -2, "c:wharever/wwf");
+			Action action = () => new Product(1, null, null, -111, -2, "c:wharever/wwf");
 
 			action.Should()
 				.Throw<CleanArchMvc.Domain.Validation.DomainValidationException>();
 		}
+
 	}
 }

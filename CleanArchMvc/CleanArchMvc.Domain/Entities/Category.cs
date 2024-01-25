@@ -12,7 +12,7 @@ namespace CleanArchMvc.Domain.Entities
         //public int Id { get; private set; }
 		public string Name { get; private set; }
 
-		//TODO. criar um metodo de atualização do nome da categoria
+		
 		public void UpdateName(string newName)
 		{
 			ValidationDomain(newName);
@@ -33,7 +33,7 @@ namespace CleanArchMvc.Domain.Entities
 
         //define que uma categoria pode ter uma coleção de produtos
         //afinal uma categoria pode tem n produtos
-        ICollection<Product> Products { get; set; }
+        public ICollection<Product> Products { get; set; }
 
         private void ValidationDomain(string name)
         {

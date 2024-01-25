@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace CleanArchMvc.Domain.Entities
 {
-	public sealed class Product
+	public sealed class Product : Entity
 	{
 		//public int Id { get; private set; }
 		public string Name { get; private set; }
@@ -41,7 +41,7 @@ namespace CleanArchMvc.Domain.Entities
 				"Invalid price value. Price must be non-negative.");
 			DomainValidationException.When(stock < 0, 
 				"Invalid stock value. Stock must be non-negative.");
-			DomainValidationException.When(image.Length > 250,
+			DomainValidationException.When(image?.Length > 250,
 				"The image description is too long");
 
 			Name = name;
@@ -52,7 +52,7 @@ namespace CleanArchMvc.Domain.Entities
 		}
 
 
-		public int CategoryID { get; set; }
+		public int CategoryId { get; set; }
 		public Category Category { get; set; }
 	}
 }
