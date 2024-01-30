@@ -1,47 +1,40 @@
-﻿using CleanArchMvc.Domain.Validation;
+﻿using CleanArchMVC.Domain.Validation;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CleanArchMvc.Domain.Entities
+namespace CleanArchMVC.Domain.Entities
 {
-	public sealed class Category : Entity
-	{
-        //public int Id { get; private set; }
-		public string Name { get; private set; }
-
-		
-		public void UpdateName(string newName)
-		{
-			ValidationDomain(newName);
-			Name = newName;
-		}
-		public Category(string name)
-        {
-            Name = name;
-        }
-        public Category(int id, string name)
-        {
-            DomainValidationException.When(id < 0,
-                "Invalid Id value");
-			Id = id;
-
-			ValidationDomain(name);
-        }
-
-        //define que uma categoria pode ter uma coleção de produtos
-        //afinal uma categoria pode tem n produtos
+    public sealed class Category : Entity
+    {
+        public string Name { get; private set; }
         public ICollection<Product> Products { get; set; }
 
-        private void ValidationDomain(string name)
+        public Category(string name)
         {
-            DomainValidationException.When(string.IsNullOrEmpty(name), 
-                "The name is invalid, cannot be null");
+            ValidateDomain(name);
+        }
 
-            DomainValidationException.When(name.Length < 3, 
-                "The name is too short");
+        public Category(int id, string name)
+        {
+            DomainExceptionValidation.When(id < 0, "Invalid Id value");
+            Id = id;
+            ValidateDomain(name);
+        }
+
+        public void Update(string name)
+        {
+            ValidateDomain(name);
+        }
+
+        private void ValidateDomain(string name)
+        {
+            DomainExceptionValidation.When(string.IsNullOrEmpty(name), "Invalid - input is required");
+            DomainExceptionValidation.When(name.Length < 3, "Invalid - input is too short");
+
+            Name = name;
         }
     }
 }

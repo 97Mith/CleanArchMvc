@@ -1,58 +1,60 @@
-﻿using CleanArchMvc.Domain.Validation;
+﻿using CleanArchMVC.Domain.Validation;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CleanArchMvc.Domain.Entities
+namespace CleanArchMVC.Domain.Entities
 {
-	public sealed class Product : Entity
-	{
-		//public int Id { get; private set; }
-		public string Name { get; private set; }
-		public string Description { get; private set; }
-		public decimal Price { get; private set; }
-		public int Stock {  get; private set; }
-		public string Image {  get; private set; }
+    public sealed class Product : Entity
+    {
+        public string Name { get; private set; }
+        public string Description { get; private set; }
+        public decimal Price { get; private set; }
+        public int Stock { get; private set; }
+        public string Image { get; private set; }
 
-        
         public Product(string name, string description, decimal price, int stock, string image)
         {
-            ValidationDomain(name, description, price, stock, image);
+            ValidateDomain(name, description, price, stock, image);
         }
-		public Product(int id, string name, string description, decimal price, int stock, string image)
-		{
-			DomainValidationException.When(id < 0,
-				"Invalid Id value");
 
-			ValidationDomain(name, description, price, stock, image);
-		}
+        public Product(int id, string name, string description, decimal price, int stock, string image)
+        {
+            DomainExceptionValidation.When(id < 0, "Invalid Id value");
+            Id = id;
+            ValidateDomain(name, description, price, stock, image);
+        }
 
-		//TODO. definir metodo para atualizar Product
+        public void Update(string name, string description, decimal price, int stock, string image, int cateoryId)
+        {
+            ValidateDomain(name, description, price, stock, image);
+            CategoryId = cateoryId;
+        }
 
-		private void ValidationDomain(string name, string description, decimal price, int stock, string image)
-		{
-			DomainValidationException.When(string.IsNullOrEmpty(name) || name.Length < 3, 
-				"The name must have at least 3 characters");
-			DomainValidationException.When(string.IsNullOrEmpty(description) || description.Length < 3, 
-				"The description must have at least 3 characters");
-			DomainValidationException.When(price < 0, 
-				"Invalid price value. Price must be non-negative.");
-			DomainValidationException.When(stock < 0, 
-				"Invalid stock value. Stock must be non-negative.");
-			DomainValidationException.When(image?.Length > 250,
-				"The image description is too long");
+        private void ValidateDomain(string name, string description, decimal price, int stock, string image)
+        {
+            DomainExceptionValidation.When(string.IsNullOrEmpty(name), "Invalid - Name is required");
+            DomainExceptionValidation.When(name.Length < 3, "Invalid - name length is too short");
 
-			Name = name;
-			Description = description;
-			Price = price;
-			Stock = stock;
-			Image = image;
-		}
+            DomainExceptionValidation.When(string.IsNullOrEmpty(description), "Invalid - Name is required");
+            DomainExceptionValidation.When(description.Length < 5, "Invalid - name length is too short");
 
+            DomainExceptionValidation.When(price < 0, "Invalid price value");
 
-		public int CategoryId { get; set; }
-		public Category Category { get; set; }
-	}
+            DomainExceptionValidation.When(stock < 0, "Invalid stock value");
+
+            DomainExceptionValidation.When(image?.Length > 250, "Invalid image name");
+
+            Name = name;
+            Description = description;
+            Price = price;
+            Stock = stock;
+            Image = image;
+        }
+        
+        public int CategoryId { get; set; }
+        public Category Category { get; set; }
+    }
 }
